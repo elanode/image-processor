@@ -71,20 +71,30 @@ class ImageSaver
     {
         $newImage = Image::make($originalImage)->orientate();
         $path = $this->generatePath($originalImage, $folderName);
-        $newImage->encode('jpg', 90);
+        $newImage->encode(
+            config('imagesaver.defaults.original.ext'),
+            config('imagesaver.defaults.original.quality')
+        );
 
         Storage::disk('public')->put($path, $newImage);
         return $path;
     }
 
-    public function saveThumbnailImage($originalImage, $folderName, $width = null, $height = 300)
+    public function saveThumbnailImage($originalImage, $folderName, $width = null, $height = null)
     {
+        if ($height === null && $width === null) {
+            $height = config('imagesaver.defaults.thumbnail.height');
+        }
+
         $newImage = Image::make($originalImage)->orientate();
         $path = $this->generatePath($originalImage, $folderName, true);
         $newImage->resize($width, $height, function ($constraint) {
             $constraint->aspectRatio();
         });
-        $newImage->encode('jpg', 90);
+        $newImage->encode(
+            config('imagesaver.defaults.thumbnail.ext'),
+            config('imagesaver.defaults.thumbnail.quality')
+        );
 
         Storage::disk('public')->put($path, $newImage);
         return $path;

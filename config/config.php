@@ -2,7 +2,7 @@
 
 return [
 
-    'default_options' => [
+    'defaults' => [
         'thumbnail' => [
             'ext'     => 'jpg',
             'quality' => 90,
