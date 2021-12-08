@@ -1,0 +1,41 @@
+{
+  "name": "elanode/image-processor",
+  "description": "A custom image processor package for elanode",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jason Chan",
+      "email": "jasonnchann24@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Elanode\\ImageProcessor\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Elanode\\ImageProcessor\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Intervention\\Image\\ImageServiceProvider",
+        "Elanode\\ImageProcessor\\ImageProcessorServiceProvider"
+      ],
+      "aliases": {
+        "Image": "Intervention\\Image\\Facades\\Image",
+        "ImageSaver": "Elanode\\ImageProcessor\\Facades\\ImageSaver"
+      }
+    }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0",
+    "phpunit/phpunit": "^9.5"
+  },
+  "require": {
+    "intervention/image": "^2.7"
+  }
+}
