@@ -13,7 +13,7 @@ class ImageProcessorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'blogpackage');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'imagesaver');
 
         $this->app->bind('imagesaver', function ($app) {
             return new ImageSaver();
