@@ -1,0 +1,1 @@
+# Elanode's Laravel Image Saving Processor Package
