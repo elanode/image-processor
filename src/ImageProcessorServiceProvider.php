@@ -2,9 +2,7 @@
 
 namespace Elanode\ImageProcessor;
 
-use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use Intervention\Image\ImageServiceProvider;
 
 class ImageProcessorServiceProvider extends ServiceProvider
 {
