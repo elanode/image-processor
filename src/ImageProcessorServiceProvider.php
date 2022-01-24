@@ -17,6 +17,10 @@ class ImageProcessorServiceProvider extends ServiceProvider
             return new ImageSaver();
         });
 
+        $this->app->bind('imagemaker', function ($app) {
+            return new ImageMaker();
+        });
+
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../config/config.php' => config_path('imagesaver.php'),
