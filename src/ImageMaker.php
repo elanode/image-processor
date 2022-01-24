@@ -100,7 +100,8 @@ class ImageMaker
             if ($maintain) {
                 $constraint->aspectRatio();
             }
-        })->encode($this->encoding, $this->quality);
+        });
+        $new->encode($this->encoding, $this->quality);
 
         $this->formattedFilename = $this->formatFilename($image);
 
