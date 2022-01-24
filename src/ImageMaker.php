@@ -49,7 +49,7 @@ class ImageMaker
      * @param string $fileNamePostFix
      * @return $this
      */
-    public function setFileNamePostFix(bool $fileNamePostFix): self
+    public function setFileNamePostFix(string $fileNamePostFix): self
     {
         $this->fileNamePostFix = $fileNamePostFix;
         return $this;
@@ -61,7 +61,7 @@ class ImageMaker
      * @param int $quality
      * @return $this
      */
-    public function setQuality(bool $quality): self
+    public function setQuality(int $quality): self
     {
         $this->quality = $quality;
         return $this;
